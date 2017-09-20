@@ -6,7 +6,7 @@ from firehouse.parcel import get_parcel
 
 
 app = Flask(__name__)
-# demo_json = 'demo/F01705150050.json'  
+# demo_json = 'demo/F01705150050.json'
 demo_json = 'demo/F01705150090.json'
 data = enrich_data(demo_json)
 
@@ -24,13 +24,13 @@ def show_data():
 
 
 @app.route('/weather/<zipcode>/<year>/<month>/<day>')
-def show_weather():
+def show_weather(zipcode, year, month, day):
     hourly_weather = get_weather(zipcode, year, month, day)
     return jsonify(hourly_weather)
 
 
 @app.route('/parcel/<lat>/<lon>')
-def show_parcel():
+def show_parcel(lat, lon):
     parcel_data = get_parcel(lat, lon)
     return jsonify(parcel_data)
 
