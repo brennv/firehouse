@@ -1,5 +1,5 @@
 import folium
-import optparse
+import os
 
 richmond_coords = [37.53, -77.46]
 
