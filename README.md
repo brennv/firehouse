@@ -1,3 +1,6 @@
+[![Python Versions](https://img.shields.io/badge/Python-3.6-blue.svg)](https://travis-ci.org/brennv/firehouse)
+[![Build Status](https://travis-ci.org/brennv/firehouse.svg?branch=master)](https://travis-ci.org/brennv/firehouse)  
+
 # firehouse
 
 Enriching data from firehouse response logs with:
