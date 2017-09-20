@@ -15,6 +15,6 @@ def get_weather(zipcode, year, month, day, hour=None):
     df = pd.read_html(str(table))[0]
     df = df.fillna('')
     weather = df.to_dict(orient='records')
-    if hour != None:
+    if hour is not None:
         weather = weather[hour]
     return weather
