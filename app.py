@@ -14,8 +14,8 @@ def raw():
 @app.route('/')
 @app.route('/map')
 def map():
-    create_map()
-    return render_template('map.html')
+    html = create_map()
+    return render_template('map.html', map=html)
 
 
 if __name__ == '__main__':
