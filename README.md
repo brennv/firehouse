@@ -21,6 +21,19 @@ pip install -r requirements.txt
 python app.py
 ```
 
+To try enriching different data you can change the filepath in
+`app.py`, or POST json to the `/data` endpoint. In Python:
+
+```
+import requests
+import json
+
+with open(filepath) as f:
+      data = json.load(f)
+response = requests.post('http://127.0.0.1:5000/data', json=json.dumps(data))
+print(response.json())
+```
+
 ## Development
 
 Install package and dev requirements:
@@ -35,3 +48,7 @@ Tests and linting run with:
 ```
 pytest -v --cov=firehouse/ tests/ && pylama -i E501 firehouse/
 ```
+
+## Attributions
+
+Weather data: Weather Underground
