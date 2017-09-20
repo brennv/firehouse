@@ -3,10 +3,13 @@ from .parcel import get_parcel
 import json
 
 
-def enrich_data(filepath):
+def enrich_data(filepath, data=None):
     """ Load json and enrich data with weather and parcel info. """
-    with open(filepath) as f:
-        data = json.load(f)
+    if not filepath:
+        data = data
+    else:
+        with open(filepath) as f:
+            data = json.load(f)
     # Add weather data
     event_opened = data['description']['event_opened']
     date, time = event_opened.split('T')
