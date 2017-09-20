@@ -14,7 +14,7 @@ def raw():
 @app.route('/')
 @app.route('/map')
 def map():
-    _map = create_map()
+    _map = create_map(data)
     return render_template('map.html', map=_map)
 
 
