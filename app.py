@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 
 @app.route('/data')
-def data():
+def test_data():
     return jsonify(data)
 
 
