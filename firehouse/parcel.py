@@ -7,4 +7,5 @@ def get_parcel(lat, lon):
            '&returnIdsOnly=false&returnGeometry=true&f=pjson')
     url += f'&geometry={lon}%2C{lat}'
     response = requests.get(url)
+    # TODO add error handler
     return response.json()
