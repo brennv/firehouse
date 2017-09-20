@@ -16,7 +16,7 @@ Demo data: [https://fire.vonapp.co/data](https://fire.vonapp.co/data)
 
 Clone the repo, install requirements and start the server:
 
-```python
+```
 pip install -r requirements.txt
 python app.py
 ```
@@ -25,13 +25,13 @@ python app.py
 
 Install package and dev requirements:
 
-```python
+```
 pip install -r requirements.txt
 pip install pytest pytest-cov pylama
 ```
 
 Tests and linting run with:
 
-```python
+```
 pytest -v --cov=firehouse/ tests/ && pylama -i E501 firehouse/
 ```
