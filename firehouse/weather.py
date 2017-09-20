@@ -13,6 +13,7 @@ def get_weather(zipcode, year, month, day, hour=None):
     soup = BeautifulSoup(response.text, 'html5lib')
     table = soup.find_all('table')[-1]
     df = pd.read_html(str(table))[0]
+    df = df.fillna('')
     weather = df.to_dict(orient='records')
     if hour != None:
         weather = weather[hour]
