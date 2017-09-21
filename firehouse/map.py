@@ -16,9 +16,9 @@ def create_popup(data):
     stations = [x['station'] for x in data['apparatus']]
     stations = ', '.join(list(set(stations)))
     popup = f"""
-        <code>{_type}: {subtype}</code>
         <h4>{address_line1}</h4>
         <h5>{date} {hour}:{minute}<h5>
+        <code>{_type}: {subtype}</code>
         <p>Weather: {weather}</p>
         <p>Parcel: {parcel}</p>
         <p>Stations involved: {stations}</p>
