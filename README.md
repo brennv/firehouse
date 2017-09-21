@@ -7,8 +7,9 @@
 
 Enriching data from firehouse response logs with:
 
-- weather data for the day the incident
-- local GIS parcel data for the incident location
+- Weather data for the day the incident from [Weather Underground](https://www.wunderground.com/history/)
+- Parcel data for the incident location from [local GIS servers](http://gis.richmondgov.com/ArcGIS/SDK/REST/index.html?catalog.html)
+- Fire district for the location of the incident from [local open-data](https://data.richmondgov.com/)
 
 Demo map: [https://fire.vonapp.co](https://fire.vonapp.co)
 
@@ -52,7 +53,3 @@ Tests and linting run with:
 ```
 pytest -v --cov=firehouse/ tests/ && pylama -i E501 firehouse/
 ```
-
-## Attributions
-
-Weather data: Weather Underground
