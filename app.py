@@ -1,9 +1,6 @@
+from firehouse import (enrich_data, create_map, get_weather, get_parcel,
+                       get_district)
 from flask import Flask, jsonify, render_template, request
-from firehouse.data import enrich_data
-from firehouse.map import create_map
-from firehouse.weather import get_weather
-from firehouse.parcel import get_parcel
-from firehouse.district import get_district
 import json
 
 
