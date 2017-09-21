@@ -15,6 +15,7 @@ demo_data = enrich_data(demo_json)
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/map', methods=['GET', 'POST'])
 def show_map():
+    """ Display the response data on a map. """
     if request.method == 'POST':
         data = json.loads(request.get_json())
         data = enrich_data(filepath=None, data=data)
@@ -26,6 +27,7 @@ def show_map():
 
 @app.route('/data', methods=['GET', 'POST'])
 def show_data():
+    """ Enrich response data. """
     if request.method == 'POST':
         data = json.loads(request.get_json())
         data = enrich_data(filepath=None, data=data)
@@ -36,15 +38,19 @@ def show_data():
 
 @app.route('/weather/<zipcode>/<year>/<month>/<day>')
 def show_weather(zipcode, year, month, day):
+    """ Retrieve weather data. """
+    # TODO use paramaters instead of url path
     hourly_weather = get_weather(zipcode, year, month, day)
     return jsonify(hourly_weather)
 
 
 @app.route('/parcel/<lat>/<lon>')
 def show_parcel(lat, lon):
+    """ Retrieve parcel data. """
     parcel_data = get_parcel(lat, lon)
     return jsonify(parcel_data)
 
 
 if __name__ == '__main__':
+    # TODO add host configs, set threaded
     app.run(debug=True)
