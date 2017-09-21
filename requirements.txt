@@ -6,3 +6,5 @@ html5lib==0.999999999
 lxml==4.0.0
 pandas==0.20.3
 requests==2.18.4
+Shapely==1.6.1
+geojson==2.3.0

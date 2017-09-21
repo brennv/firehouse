@@ -1,5 +1,6 @@
 from .weather import get_weather
 from .parcel import get_parcel
+from .district import find_district
 import json
 
 
@@ -21,4 +22,6 @@ def enrich_data(filepath, data=None):
     # Add parcel data
     lat, lon = data['address']['latitude'], data['address']['longitude']
     data['parcel'] = get_parcel(lat, lon)
+    # Add fire district
+    data['district'] = find_district(lat, lon)
     return data

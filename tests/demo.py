@@ -1,3 +1,20 @@
+expected_map = ('<div style="width:100%;"><div style="position:relative;width:100%;'
+                'height:0;padding-bottom:60%;"><iframe src="data:text/html;'
+                'charset=utf-8;base64,.." style="position:absolute;width:100%;'
+                'height:100%;left:0;top:0;border:none !important;" '
+                'allowfullscreen webkitallowfullscreen mozallowfullscreen>'
+                '</iframe></div></div>')
+
+expected_popup = """
+        <h4>333 E FRANKLIN ST</h4>
+        <h5>2017-05-15 13:19<h5>
+        <code>HAZMAT: SMELL OR ODOR (NO SPILL)</code>
+        <p>Weather: Partly Cloudy</p>
+        <p>Parcel: 102100</p>
+        <p>Stations involved: FSTA22</p>
+        <p>Fire district: 2</p>
+"""
+
 expected_data = {
   "address": {
     "address_id": "",
@@ -265,6 +282,7 @@ expected_data = {
     "subtype": "SMELL OR ODOR (NO SPILL)",
     "type": "HAZMAT"
   },
+  "district": 2,
   "fire_department": {
     "fd_id": "76000",
     "firecares_id": "93345",
@@ -296,369 +314,353 @@ expected_data = {
   "weather": [
     {
       "Conditions": "Mostly Cloudy",
-      "Dew Point": "50.0\u00a0\u00b0F",
+      "Dew Point": "10.0\u00a0\u00b0C",
       "Events": "",
       "Gust Speed": "-",
       "Humidity": "46%",
       "Precip": "",
-      "Pressure": "29.79\u00a0in",
-      "Temp.": "71.6\u00a0\u00b0F",
+      "Pressure": "1008.7\u00a0hPa",
+      "Temp.": "22.0\u00a0\u00b0C",
       "Time (EDT)": "12:51 AM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "North",
-      "Wind Speed": "12.7\u00a0mph"
+      "Wind Speed": "20.4\u00a0km/h  / 5.7\u00a0m/s"
     },
     {
       "Conditions": "Mostly Cloudy",
-      "Dew Point": "50.0\u00a0\u00b0F",
+      "Dew Point": "10.0\u00a0\u00b0C",
       "Events": "",
       "Gust Speed": "-",
       "Humidity": "49%",
       "Precip": "",
-      "Pressure": "29.81\u00a0in",
-      "Temp.": "70.0\u00a0\u00b0F",
+      "Pressure": "1009.2\u00a0hPa",
+      "Temp.": "21.1\u00a0\u00b0C",
       "Time (EDT)": "12:54 AM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "North",
-      "Wind Speed": "13.8\u00a0mph"
+      "Wind Speed": "22.2\u00a0km/h  / 6.2\u00a0m/s"
     },
     {
       "Conditions": "Mostly Cloudy",
-      "Dew Point": "48.0\u00a0\u00b0F",
+      "Dew Point": "8.9\u00a0\u00b0C",
       "Events": "",
       "Gust Speed": "-",
       "Humidity": "52%",
       "Precip": "",
-      "Pressure": "29.82\u00a0in",
-      "Temp.": "66.0\u00a0\u00b0F",
+      "Pressure": "1009.8\u00a0hPa",
+      "Temp.": "18.9\u00a0\u00b0C",
       "Time (EDT)": "1:54 AM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "NNE",
-      "Wind Speed": "13.8\u00a0mph"
+      "Wind Speed": "22.2\u00a0km/h  / 6.2\u00a0m/s"
     },
     {
       "Conditions": "Mostly Cloudy",
-      "Dew Point": "45.0\u00a0\u00b0F",
+      "Dew Point": "7.2\u00a0\u00b0C",
       "Events": "",
       "Gust Speed": "-",
       "Humidity": "50%",
       "Precip": "",
-      "Pressure": "29.85\u00a0in",
-      "Temp.": "64.0\u00a0\u00b0F",
+      "Pressure": "1010.8\u00a0hPa",
+      "Temp.": "17.8\u00a0\u00b0C",
       "Time (EDT)": "2:54 AM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "NNE",
-      "Wind Speed": "11.5\u00a0mph"
+      "Wind Speed": "18.5\u00a0km/h  / 5.1\u00a0m/s"
     },
     {
       "Conditions": "Mostly Cloudy",
-      "Dew Point": "35.1\u00a0\u00b0F",
+      "Dew Point": "1.7\u00a0\u00b0C",
       "Events": "",
       "Gust Speed": "-",
       "Humidity": "35%",
       "Precip": "",
-      "Pressure": "29.88\u00a0in",
-      "Temp.": "63.0\u00a0\u00b0F",
+      "Pressure": "1011.6\u00a0hPa",
+      "Temp.": "17.2\u00a0\u00b0C",
       "Time (EDT)": "3:54 AM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "North",
-      "Wind Speed": "10.4\u00a0mph"
+      "Wind Speed": "16.7\u00a0km/h  / 4.6\u00a0m/s"
     },
     {
       "Conditions": "Mostly Cloudy",
-      "Dew Point": "32.0\u00a0\u00b0F",
+      "Dew Point": "0.0\u00a0\u00b0C",
       "Events": "",
       "Gust Speed": "-",
       "Humidity": "32%",
       "Precip": "",
-      "Pressure": "29.89\u00a0in",
-      "Temp.": "62.1\u00a0\u00b0F",
+      "Pressure": "1012.1\u00a0hPa",
+      "Temp.": "16.7\u00a0\u00b0C",
       "Time (EDT)": "4:54 AM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "North",
-      "Wind Speed": "12.7\u00a0mph"
+      "Wind Speed": "20.4\u00a0km/h  / 5.7\u00a0m/s"
     },
     {
       "Conditions": "Mostly Cloudy",
-      "Dew Point": "33.1\u00a0\u00b0F",
+      "Dew Point": "0.6\u00a0\u00b0C",
       "Events": "",
       "Gust Speed": "-",
       "Humidity": "36%",
       "Precip": "",
-      "Pressure": "29.91\u00a0in",
-      "Temp.": "60.1\u00a0\u00b0F",
+      "Pressure": "1012.7\u00a0hPa",
+      "Temp.": "15.6\u00a0\u00b0C",
       "Time (EDT)": "5:54 AM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "North",
-      "Wind Speed": "5.8\u00a0mph"
+      "Wind Speed": "9.3\u00a0km/h  / 2.6\u00a0m/s"
     },
     {
       "Conditions": "Scattered Clouds",
-      "Dew Point": "36.0\u00a0\u00b0F",
+      "Dew Point": "2.2\u00a0\u00b0C",
       "Events": "",
       "Gust Speed": "-",
       "Humidity": "42%",
       "Precip": "",
-      "Pressure": "29.94\u00a0in",
-      "Temp.": "59.0\u00a0\u00b0F",
+      "Pressure": "1013.6\u00a0hPa",
+      "Temp.": "15.0\u00a0\u00b0C",
       "Time (EDT)": "6:54 AM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "North",
-      "Wind Speed": "6.9\u00a0mph"
+      "Wind Speed": "11.1\u00a0km/h  / 3.1\u00a0m/s"
     },
     {
       "Conditions": "Scattered Clouds",
-      "Dew Point": "36.0\u00a0\u00b0F",
+      "Dew Point": "2.2\u00a0\u00b0C",
       "Events": "",
       "Gust Speed": "-",
       "Humidity": "41%",
       "Precip": "",
-      "Pressure": "29.96\u00a0in",
-      "Temp.": "60.1\u00a0\u00b0F",
+      "Pressure": "1014.5\u00a0hPa",
+      "Temp.": "15.6\u00a0\u00b0C",
       "Time (EDT)": "7:54 AM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "North",
-      "Wind Speed": "10.4\u00a0mph"
+      "Wind Speed": "16.7\u00a0km/h  / 4.6\u00a0m/s"
     },
     {
       "Conditions": "Partly Cloudy",
-      "Dew Point": "37.0\u00a0\u00b0F",
+      "Dew Point": "2.8\u00a0\u00b0C",
       "Events": "",
       "Gust Speed": "-",
       "Humidity": "38%",
       "Precip": "",
-      "Pressure": "29.97\u00a0in",
-      "Temp.": "63.0\u00a0\u00b0F",
+      "Pressure": "1014.7\u00a0hPa",
+      "Temp.": "17.2\u00a0\u00b0C",
       "Time (EDT)": "8:54 AM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "North",
-      "Wind Speed": "10.4\u00a0mph"
+      "Wind Speed": "16.7\u00a0km/h  / 4.6\u00a0m/s"
     },
     {
       "Conditions": "Partly Cloudy",
-      "Dew Point": "37.9\u00a0\u00b0F",
+      "Dew Point": "3.3\u00a0\u00b0C",
       "Events": "",
-      "Gust Speed": "19.6\u00a0mph",
+      "Gust Speed": "31.5\u00a0km/h  / 8.7\u00a0m/s",
       "Humidity": "36%",
       "Precip": "",
-      "Pressure": "29.97\u00a0in",
-      "Temp.": "66.0\u00a0\u00b0F",
+      "Pressure": "1014.8\u00a0hPa",
+      "Temp.": "18.9\u00a0\u00b0C",
       "Time (EDT)": "9:54 AM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "NNW",
-      "Wind Speed": "13.8\u00a0mph"
+      "Wind Speed": "22.2\u00a0km/h  / 6.2\u00a0m/s"
     },
     {
       "Conditions": "Partly Cloudy",
-      "Dew Point": "36.0\u00a0\u00b0F",
+      "Dew Point": "2.2\u00a0\u00b0C",
       "Events": "",
       "Gust Speed": "-",
       "Humidity": "30%",
       "Precip": "",
-      "Pressure": "29.97\u00a0in",
-      "Temp.": "69.1\u00a0\u00b0F",
+      "Pressure": "1014.8\u00a0hPa",
+      "Temp.": "20.6\u00a0\u00b0C",
       "Time (EDT)": "10:54 AM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "NW",
-      "Wind Speed": "15.0\u00a0mph"
+      "Wind Speed": "24.1\u00a0km/h  / 6.7\u00a0m/s"
     },
     {
       "Conditions": "Partly Cloudy",
-      "Dew Point": "37.0\u00a0\u00b0F",
+      "Dew Point": "2.8\u00a0\u00b0C",
       "Events": "",
-      "Gust Speed": "23.0\u00a0mph",
+      "Gust Speed": "37.0\u00a0km/h  / 10.3\u00a0m/s",
       "Humidity": "29%",
       "Precip": "",
-      "Pressure": "29.96\u00a0in",
-      "Temp.": "71.1\u00a0\u00b0F",
+      "Pressure": "1014.4\u00a0hPa",
+      "Temp.": "21.7\u00a0\u00b0C",
       "Time (EDT)": "11:54 AM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "North",
-      "Wind Speed": "17.3\u00a0mph"
+      "Wind Speed": "27.8\u00a0km/h  / 7.7\u00a0m/s"
     },
     {
       "Conditions": "Partly Cloudy",
-      "Dew Point": "37.0\u00a0\u00b0F",
+      "Dew Point": "2.8\u00a0\u00b0C",
       "Events": "",
       "Gust Speed": "-",
       "Humidity": "26%",
       "Precip": "",
-      "Pressure": "29.94\u00a0in",
-      "Temp.": "73.9\u00a0\u00b0F",
+      "Pressure": "1013.8\u00a0hPa",
+      "Temp.": "23.3\u00a0\u00b0C",
       "Time (EDT)": "12:54 PM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "NNW",
-      "Wind Speed": "17.3\u00a0mph"
+      "Wind Speed": "27.8\u00a0km/h  / 7.7\u00a0m/s"
     },
     {
       "Conditions": "Partly Cloudy",
-      "Dew Point": "36.0\u00a0\u00b0F",
+      "Dew Point": "2.2\u00a0\u00b0C",
       "Events": "",
-      "Gust Speed": "21.9\u00a0mph",
+      "Gust Speed": "35.2\u00a0km/h  / 9.8\u00a0m/s",
       "Humidity": "24%",
       "Precip": "",
-      "Pressure": "29.94\u00a0in",
-      "Temp.": "75.0\u00a0\u00b0F",
+      "Pressure": "1013.6\u00a0hPa",
+      "Temp.": "23.9\u00a0\u00b0C",
       "Time (EDT)": "1:54 PM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "NW",
-      "Wind Speed": "12.7\u00a0mph"
+      "Wind Speed": "20.4\u00a0km/h  / 5.7\u00a0m/s"
     },
     {
       "Conditions": "Partly Cloudy",
-      "Dew Point": "34.0\u00a0\u00b0F",
+      "Dew Point": "1.1\u00a0\u00b0C",
       "Events": "",
       "Gust Speed": "-",
       "Humidity": "21%",
       "Precip": "",
-      "Pressure": "29.92\u00a0in",
-      "Temp.": "77.0\u00a0\u00b0F",
+      "Pressure": "1013.0\u00a0hPa",
+      "Temp.": "25.0\u00a0\u00b0C",
       "Time (EDT)": "2:54 PM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "NW",
-      "Wind Speed": "11.5\u00a0mph"
+      "Wind Speed": "18.5\u00a0km/h  / 5.1\u00a0m/s"
     },
     {
       "Conditions": "Partly Cloudy",
-      "Dew Point": "37.0\u00a0\u00b0F",
+      "Dew Point": "2.8\u00a0\u00b0C",
       "Events": "",
       "Gust Speed": "-",
       "Humidity": "22%",
       "Precip": "",
-      "Pressure": "29.91\u00a0in",
-      "Temp.": "79.0\u00a0\u00b0F",
+      "Pressure": "1012.7\u00a0hPa",
+      "Temp.": "26.1\u00a0\u00b0C",
       "Time (EDT)": "3:54 PM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "NW",
-      "Wind Speed": "13.8\u00a0mph"
+      "Wind Speed": "22.2\u00a0km/h  / 6.2\u00a0m/s"
     },
     {
       "Conditions": "Clear",
-      "Dew Point": "37.0\u00a0\u00b0F",
+      "Dew Point": "2.8\u00a0\u00b0C",
       "Events": "",
       "Gust Speed": "-",
       "Humidity": "21%",
       "Precip": "",
-      "Pressure": "29.89\u00a0in",
-      "Temp.": "80.1\u00a0\u00b0F",
+      "Pressure": "1012.2\u00a0hPa",
+      "Temp.": "26.7\u00a0\u00b0C",
       "Time (EDT)": "4:54 PM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "NNW",
-      "Wind Speed": "12.7\u00a0mph"
+      "Wind Speed": "20.4\u00a0km/h  / 5.7\u00a0m/s"
     },
     {
       "Conditions": "Clear",
-      "Dew Point": "36.0\u00a0\u00b0F",
+      "Dew Point": "2.2\u00a0\u00b0C",
       "Events": "",
       "Gust Speed": "-",
       "Humidity": "21%",
       "Precip": "",
-      "Pressure": "29.90\u00a0in",
-      "Temp.": "79.0\u00a0\u00b0F",
+      "Pressure": "1012.4\u00a0hPa",
+      "Temp.": "26.1\u00a0\u00b0C",
       "Time (EDT)": "5:54 PM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "NNW",
-      "Wind Speed": "8.1\u00a0mph"
+      "Wind Speed": "13.0\u00a0km/h  / 3.6\u00a0m/s"
     },
     {
       "Conditions": "Clear",
-      "Dew Point": "39.9\u00a0\u00b0F",
+      "Dew Point": "4.4\u00a0\u00b0C",
       "Events": "",
       "Gust Speed": "-",
       "Humidity": "26%",
       "Precip": "",
-      "Pressure": "29.91\u00a0in",
-      "Temp.": "77.0\u00a0\u00b0F",
+      "Pressure": "1012.8\u00a0hPa",
+      "Temp.": "25.0\u00a0\u00b0C",
       "Time (EDT)": "6:54 PM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "North",
-      "Wind Speed": "6.9\u00a0mph"
+      "Wind Speed": "11.1\u00a0km/h  / 3.1\u00a0m/s"
     },
     {
       "Conditions": "Partly Cloudy",
-      "Dew Point": "43.0\u00a0\u00b0F",
+      "Dew Point": "6.1\u00a0\u00b0C",
       "Events": "",
       "Gust Speed": "-",
       "Humidity": "35%",
       "Precip": "",
-      "Pressure": "29.94\u00a0in",
-      "Temp.": "72.0\u00a0\u00b0F",
+      "Pressure": "1013.6\u00a0hPa",
+      "Temp.": "22.2\u00a0\u00b0C",
       "Time (EDT)": "7:54 PM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "North",
-      "Wind Speed": "5.8\u00a0mph"
+      "Wind Speed": "9.3\u00a0km/h  / 2.6\u00a0m/s"
     },
     {
       "Conditions": "Partly Cloudy",
-      "Dew Point": "46.0\u00a0\u00b0F",
+      "Dew Point": "7.8\u00a0\u00b0C",
       "Events": "",
       "Gust Speed": "-",
       "Humidity": "48%",
       "Precip": "",
-      "Pressure": "29.96\u00a0in",
-      "Temp.": "66.0\u00a0\u00b0F",
+      "Pressure": "1014.4\u00a0hPa",
+      "Temp.": "18.9\u00a0\u00b0C",
       "Time (EDT)": "8:54 PM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "NE",
-      "Wind Speed": "3.5\u00a0mph"
+      "Wind Speed": "5.6\u00a0km/h  / 1.5\u00a0m/s"
     },
     {
       "Conditions": "Partly Cloudy",
-      "Dew Point": "46.9\u00a0\u00b0F",
+      "Dew Point": "8.3\u00a0\u00b0C",
       "Events": "",
       "Gust Speed": "-",
       "Humidity": "56%",
       "Precip": "",
-      "Pressure": "29.99\u00a0in",
-      "Temp.": "63.0\u00a0\u00b0F",
+      "Pressure": "1015.5\u00a0hPa",
+      "Temp.": "17.2\u00a0\u00b0C",
       "Time (EDT)": "9:54 PM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "Calm",
       "Wind Speed": "Calm"
     },
     {
       "Conditions": "Clear",
-      "Dew Point": "48.9\u00a0\u00b0F",
+      "Dew Point": "9.4\u00a0\u00b0C",
       "Events": "",
       "Gust Speed": "-",
       "Humidity": "74%",
       "Precip": "",
-      "Pressure": "30.02\u00a0in",
-      "Temp.": "57.0\u00a0\u00b0F",
+      "Pressure": "1016.5\u00a0hPa",
+      "Temp.": "13.9\u00a0\u00b0C",
       "Time (EDT)": "10:54 PM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "Calm",
       "Wind Speed": "Calm"
     },
     {
       "Conditions": "Clear",
-      "Dew Point": "46.0\u00a0\u00b0F",
+      "Dew Point": "7.8\u00a0\u00b0C",
       "Events": "",
       "Gust Speed": "-",
       "Humidity": "67%",
       "Precip": "",
-      "Pressure": "30.04\u00a0in",
-      "Temp.": "57.0\u00a0\u00b0F",
+      "Pressure": "1017.0\u00a0hPa",
+      "Temp.": "13.9\u00a0\u00b0C",
       "Time (EDT)": "11:54 PM",
-      "Visibility": "10.0\u00a0mi",
+      "Visibility": "16.1\u00a0km",
       "Wind Dir": "Calm",
       "Wind Speed": "Calm"
     }
   ]
 }
-
-expected_map = ('<div style="width:100%;"><div style="position:relative;width:100%;'
-                'height:0;padding-bottom:60%;"><iframe src="data:text/html;'
-                'charset=utf-8;base64,.." style="position:absolute;width:100%;'
-                'height:100%;left:0;top:0;border:none !important;" '
-                'allowfullscreen webkitallowfullscreen mozallowfullscreen>'
-                '</iframe></div></div>')
-
-expected_popup = """
-        <h4>333 E FRANKLIN ST</h4>
-        <h5>2017-05-15 13:19<h5>
-        <code>HAZMAT: SMELL OR ODOR (NO SPILL)</code>
-        <p>Weather: Partly Cloudy</p>
-        <p>Parcel: 102100</p>
-        <p>Stations involved: FSTA22</p>
-"""

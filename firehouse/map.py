@@ -18,6 +18,7 @@ def create_popup(data):
     parcel = data['parcel']['spatialReference']['wkid']
     stations = [x['station'] for x in data['apparatus']]
     stations = ', '.join(list(set(stations)))
+    district = data['district']
     popup = f"""
         <h4>{address_line1}</h4>
         <h5>{date} {hour}:{minute}<h5>
@@ -25,6 +26,7 @@ def create_popup(data):
         <p>Weather: {weather}</p>
         <p>Parcel: {parcel}</p>
         <p>Stations involved: {stations}</p>
+        <p>Fire district: {district}</p>
         """
     return popup
 
