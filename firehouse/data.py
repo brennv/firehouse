@@ -10,6 +10,7 @@ def enrich_data(filepath, data=None):
     else:
         with open(filepath) as f:
             data = json.load(f)
+    # TODO inspect data structure
     # Add weather data
     event_opened = data['description']['event_opened']
     date, time = event_opened.split('T')
