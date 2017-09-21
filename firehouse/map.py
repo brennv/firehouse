@@ -1,6 +1,9 @@
 import folium
 
 richmond_coords = [37.53, -77.46]
+with open('demo/Fire_Districts.geojson') as f:
+    # From https://data.richmondgov.com/Community-Safety-and-Well-Being/Fire-Districts/f9rn-dwnd
+    fire_districts = f.read()
 
 
 def create_popup(data):
@@ -28,8 +31,10 @@ def create_popup(data):
 
 def create_map(data):
     """ Generate a LeafletJS div section using Python Folium. """
-    m = folium.Map(location=richmond_coords)
+    m = folium.Map(location=richmond_coords, zoom_start=12)
     lat, lon = data['address']['latitude'], data['address']['longitude']
     popup = create_popup(data)
     folium.Marker([lat, lon], popup=popup).add_to(m)
+    folium.GeoJson(fire_districts, name='geojson',
+                   style_function=lambda feature: {'fillOpacity': 0}).add_to(m)
     return m._repr_html_()
