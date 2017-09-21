@@ -17,6 +17,7 @@ demo_data = enrich_data(demo_json)
 def show_map():
     """ Display the response data on a map. """
     if request.method == 'POST':
+        # TODO add form to post data
         data = json.loads(request.get_json())
         data = enrich_data(filepath=None, data=data)
     else:
