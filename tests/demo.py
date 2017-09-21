@@ -12,7 +12,7 @@ expected_popup = """
         <p>Weather: Partly Cloudy</p>
         <p>Parcel: 102100</p>
         <p>Stations involved: FSTA22</p>
-        <p>Fire district: 2</p>
+        <p>Fire district: 6</p>
 """
 
 expected_data = {
@@ -282,7 +282,7 @@ expected_data = {
     "subtype": "SMELL OR ODOR (NO SPILL)",
     "type": "HAZMAT"
   },
-  "district": 2,
+  "district": "6",
   "fire_department": {
     "fd_id": "76000",
     "firecares_id": "93345",
