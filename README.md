@@ -21,8 +21,8 @@ pip install -r requirements.txt
 python app.py
 ```
 
-To try enriching different data you can change the filepath in
-`app.py`, or POST json to the `/data` endpoint. In Python:
+To try enriching other fire response entries you can POST json to the `/data`
+endpoint. In Python it would look like:
 
 ```
 import requests
@@ -30,9 +30,11 @@ import json
 
 with open(filepath) as f:
       data = json.load(f)
-response = requests.post('http://127.0.0.1:5000/data', json=json.dumps(data))
+response = requests.post('https://fire.vonapp.co/data', json=json.dumps(data))
 print(response.json())
 ```
+
+Alternatively, you can change the filepath for demo json in `app.py`.
 
 ## Development
 
