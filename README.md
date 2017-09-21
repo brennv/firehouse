@@ -1,5 +1,7 @@
 [![Python Versions](https://img.shields.io/badge/Python-3.6-blue.svg)](https://travis-ci.org/brennv/firehouse)
-[![Build Status](https://travis-ci.org/brennv/firehouse.svg?branch=master)](https://travis-ci.org/brennv/firehouse)  
+[![Build Status](https://travis-ci.org/brennv/firehouse.svg?branch=master)](https://travis-ci.org/brennv/firehouse)
+[![codecov](https://codecov.io/gh/brennv/firehouse/branch/master/graph/badge.svg)](https://codecov.io/gh/brennv/firehouse)
+
 
 # firehouse
 
