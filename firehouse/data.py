@@ -1,6 +1,6 @@
 from .weather import get_weather
 from .parcel import get_parcel
-from .district import find_district
+from .district import get_district
 import json
 
 
@@ -10,8 +10,7 @@ def enrich_data(filepath, data=None):
         data = data
     else:
         with open(filepath) as f:
-            data = json.load(f)
-    # TODO inspect data structure
+            data = json.load(f)  # TODO inspect data structure
     # Add weather data
     event_opened = data['description']['event_opened']
     date, time = event_opened.split('T')
@@ -23,5 +22,5 @@ def enrich_data(filepath, data=None):
     lat, lon = data['address']['latitude'], data['address']['longitude']
     data['parcel'] = get_parcel(lat, lon)
     # Add fire district
-    data['district'] = find_district(lat, lon)
+    data['district'] = get_district(lat, lon)
     return data

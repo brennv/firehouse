@@ -8,10 +8,10 @@ with open('demo/Fire_Districts.geojson') as f:
     mp = geojson.load(f)
 
 
-def find_district(lat, lon):
+def get_district(lat, lon):
     """ Check if polygons in a multiploygon contain a point.
     Return the property name for the intersecting polygon. """
-    point = Point(lon, lat)
+    point = Point(float(lon), float(lat))
     point_in_poly = [shape(s['geometry']).contains(point) for s in mp['features']]
     index = point_in_poly.index(True)
     district_names = [s['properties']['name'] for s in mp['features']]
