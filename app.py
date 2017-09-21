@@ -3,6 +3,7 @@ from firehouse.data import enrich_data
 from firehouse.map import create_map
 from firehouse.weather import get_weather
 from firehouse.parcel import get_parcel
+from firehouse.district import get_district
 import json
 
 
@@ -50,6 +51,13 @@ def show_parcel(lat, lon):
     """ Retrieve parcel data. """
     parcel_data = get_parcel(lat, lon)
     return jsonify(parcel_data)
+
+
+@app.route('/district/<lat>/<lon>')
+def show_district(lat, lon):
+    """ Retrieve district data. """
+    district = get_district(lat, lon)
+    return jsonify({'district': district})
 
 
 if __name__ == '__main__':
