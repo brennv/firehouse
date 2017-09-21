@@ -1,6 +1,6 @@
 import folium
 
-richmond_coords = [37.53, -77.46]
+richmond_coords = [37.5140, -77.4565]
 with open('demo/Fire_Districts.geojson') as f:
     # From https://data.richmondgov.com/Community-Safety-and-Well-Being/Fire-Districts/f9rn-dwnd
     fire_districts = f.read()
