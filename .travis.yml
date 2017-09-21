@@ -2,11 +2,10 @@ language: python
 python:
   - 3.6
 
-# before_install: sudo apt-get install -qq python-numpy python-scipy
 install:
   - pip install -r requirements.txt
   - pip install pytest pytest-cov pylama
 
 script: python -m pytest --cov=firehouse/ tests/
-after_script: python -m pylama -i E501 firehouse/ || true
 after_success: bash <(curl -s https://codecov.io/bash)
+after_script: python -m pylama -i E501 firehouse/ || true
