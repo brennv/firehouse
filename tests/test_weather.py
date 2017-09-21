@@ -1,6 +1,6 @@
-# http://127.0.0.1:5000/weather/23218/2015/7/15
+# TODO test http://127.0.0.1:5000/weather/23218/2015/7/15
 
-[
+expected_weather = [
   {
     "Conditions": "Mostly Cloudy",
     "Dew Point": "71.1\u00a0\u00b0F",
