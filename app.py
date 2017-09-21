@@ -7,8 +7,8 @@ import json
 
 
 app = Flask(__name__)
-# demo_json = 'demo/F01705150050.json'
-demo_json = 'demo/F01705150090.json'
+demo_json = 'demo/F01705150050.json'
+# demo_json = 'demo/F01705150090.json'
 demo_data = enrich_data(demo_json)
 
 
