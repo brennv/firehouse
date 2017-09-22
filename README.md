@@ -15,9 +15,9 @@ Example map: [https://fire.vonapp.co](https://fire.vonapp.co)
 
 Example enriched json: [https://fire.vonapp.co/data](https://fire.vonapp.co/data)
 
-Demo maps: [https://fire.vonapp.co/demo](https://fire.vonapp.co/demo)
+Demo maps: [https://fire.vonapp.co/demo/<id>](https://fire.vonapp.co/demo)
 
-Demo enriched json: [https://fire.vonapp.co/demo](https://fire.vonapp.co/demo) plus `<id>/data`
+Demo enriched json: [https://fire.vonapp.co/demo/<id>/data](https://fire.vonapp.co/demo/F01705150090/data)
 
 
 ## Usage
@@ -66,4 +66,4 @@ pytest -v --cov=firehouse/ tests/ && pylama -i E501 firehouse/
 - Mapping multiple reports
 - Contextual sidebar with report list
 - api/ endpoints with swagger
-- Caching 
+- Caching
