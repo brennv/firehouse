@@ -15,9 +15,9 @@ Example map: [https://fire.vonapp.co](https://fire.vonapp.co)
 
 Example enriched json: [https://fire.vonapp.co/data](https://fire.vonapp.co/data)
 
-Demo maps: [https://fire.vonapp.co/demo/FILENAME](https://fire.vonapp.co/demo)
+Demo maps: [https://fire.vonapp.co/demo/REPORT](https://fire.vonapp.co/demo)
 
-Demo enriched json: [https://fire.vonapp.co/demo/FILENAME/data](https://fire.vonapp.co/demo/F01705150090/data)
+Demo enriched json: [https://fire.vonapp.co/demo/REPORT/data](https://fire.vonapp.co/demo/F01705150090/data)
 
 
 ## Usage
