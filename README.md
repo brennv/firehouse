@@ -65,3 +65,4 @@ pytest -v --cov=firehouse/ tests/ && pylama -i E501 firehouse/
 - Session management
 - Mapping multiple reports
 - Contextual sidebar with report list
+- api/ endpoints with swagger
