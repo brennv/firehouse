@@ -66,3 +66,4 @@ pytest -v --cov=firehouse/ tests/ && pylama -i E501 firehouse/
 - Mapping multiple reports
 - Contextual sidebar with report list
 - api/ endpoints with swagger
+- Caching 
