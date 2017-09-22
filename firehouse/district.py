@@ -2,7 +2,7 @@ from shapely.geometry import Point, shape
 import geojson
 
 
-with open('demo/Fire_Districts.geojson') as f:
+with open('demo/districts/Fire_Districts.geojson') as f:
     # Load multipolygon from
     # data.richmondgov.com/Community-Safety-and-Well-Being/Fire-Districts/f9rn-dwnd
     mp = geojson.load(f)

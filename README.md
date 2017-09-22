@@ -11,9 +11,11 @@ Enriching data from firehouse response logs with:
 - Parcel data for the incident location from [local GIS servers](http://gis.richmondgov.com/ArcGIS/SDK/REST/index.html?catalog.html)
 - Fire district for the location of the incident from [local open-data](https://data.richmondgov.com/)
 
-Demo map: [https://fire.vonapp.co](https://fire.vonapp.co)
+Default map: [https://fire.vonapp.co](https://fire.vonapp.co)
 
-Demo data: [https://fire.vonapp.co/data](https://fire.vonapp.co/data)
+All demo maps: [https://fire.vonapp.co](https://fire.vonapp.co/demo)
+
+Enriched json data: [https://fire.vonapp.co/data](https://fire.vonapp.co/data)
 
 ## Usage
 
@@ -24,8 +26,9 @@ pip install -r requirements.txt
 python app.py
 ```
 
-To try enriching other fire response entries you can POST json to the `/data`
-endpoint. In Python it would look like:
+To demo more reports, add json files to the `demo/` folder and visit the `<host>/demo` endpoint.
+
+To get enriched json you can POST json to the `/data` endpoint. In Python it would look like:
 
 ```
 import requests

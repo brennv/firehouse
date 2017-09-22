@@ -2,6 +2,8 @@ from firehouse import (enrich_data, create_map, get_weather, get_parcel,
                        get_district)
 from flask import Flask, jsonify, render_template, request
 import json
+from os import listdir
+from os.path import isfile, join
 
 
 app = Flask(__name__)
@@ -11,7 +13,6 @@ demo_data = enrich_data(demo_json)
 
 
 @app.route('/', methods=['GET', 'POST'])
-@app.route('/map', methods=['GET', 'POST'])
 def show_map():
     """ Display the response data on a map. """
     if request.method == 'POST':
@@ -21,6 +22,27 @@ def show_map():
     else:
         data = demo_data
     _map = create_map(data)
+    return render_template('map.html', map=_map)
+
+
+@app.route('/demo')
+@app.route('/demo/')
+@app.route('/demo/<json_file_id>')
+def show_jsonfile(json_file_id=''):
+    """ For demo purposes, an endpoint for loading json files
+    dynamically from the demo folder. """
+    try:
+        with open('demo/' + json_file_id + '.json') as f:
+            data = json.load(f)
+    except FileNotFoundError:
+        data = None
+        files = [f for f in listdir('demo/') if isfile(join('demo/', f))]
+        file_ids = [x.replace('.json', '') for x in files]
+        urls = [f"<br><a href='/demo/{x}')>{x}</a>" for x in file_ids]
+        _map = '<h3>Reports:</h3>' + ''.join(urls)
+    if data is not None:
+        data = enrich_data(filepath=None, data=data)
+        _map = create_map(data)
     return render_template('map.html', map=_map)
 
 
@@ -59,4 +81,4 @@ def show_district(lat, lon):
 
 if __name__ == '__main__':
     # TODO add host configs, set threaded
-    app.run(debug=True)
+    app.run(debug=True)  # intentionally left in debug mode for testing
