@@ -39,7 +39,7 @@ def show_jsonfile(json_file_id=''):
         files = [f for f in listdir('demo/') if isfile(join('demo/', f))]
         file_ids = [x.replace('.json', '') for x in files]
         urls = [f"<br><a href='/demo/{x}')>{x}</a>" for x in file_ids]
-        _map = '<h3>Reports:</h3>' + ''.join(urls)
+        _map = '<h3>Reports:</h3>' + ''.join(urls)  # TODO styling lol
     if data is not None:
         data = enrich_data(filepath=None, data=data)
         _map = create_map(data)
