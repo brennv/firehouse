@@ -67,3 +67,4 @@ pytest -v --cov=firehouse/ tests/ && pylama -i E501 firehouse/
 - Contextual sidebar with report list
 - api/ endpoints with swagger
 - Caching
+- async calls for weather and parcel data
