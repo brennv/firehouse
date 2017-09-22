@@ -46,6 +46,18 @@ def show_jsonfile(json_file_id=''):
     return render_template('map.html', map=_map)
 
 
+@app.route('/demo/<json_file_id>/data')
+def show_demo_data(json_file_id=''):
+    """ Enrich response demo data. """
+    try:
+        with open('demo/' + json_file_id + '.json') as f:
+            data = json.load(f)
+            data = enrich_data(filepath=None, data=data)
+    except FileNotFoundError:
+        data = {'message': 'not found'}
+    return jsonify(data)
+
+
 @app.route('/data', methods=['GET', 'POST'])
 def show_data():
     """ Enrich response data. """

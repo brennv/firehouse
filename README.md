@@ -11,11 +11,14 @@ Enriching data from firehouse response logs with:
 - Parcel data for the incident location from [local GIS servers](http://gis.richmondgov.com/ArcGIS/SDK/REST/index.html?catalog.html)
 - Fire district for the location of the incident from [local open-data](https://data.richmondgov.com/)
 
-Default map: [https://fire.vonapp.co](https://fire.vonapp.co)
+Example map: [https://fire.vonapp.co](https://fire.vonapp.co)
 
-All demo maps: [https://fire.vonapp.co](https://fire.vonapp.co/demo)
+Example enriched json: [https://fire.vonapp.co/data](https://fire.vonapp.co/data)
 
-Enriched json data: [https://fire.vonapp.co/data](https://fire.vonapp.co/data)
+Demo maps: [https://fire.vonapp.co/demo](https://fire.vonapp.co/demo)
+
+Demo enriched json: [https://fire.vonapp.co/demo](https://fire.vonapp.co/demo) plus `<id>/data`
+
 
 ## Usage
 
@@ -28,7 +31,9 @@ python app.py
 
 To demo more reports, add json files to the `demo/` folder and visit the `<host>/demo` endpoint.
 
-To get enriched json you can POST json to the `/data` endpoint. In Python it would look like:
+To get the enriched demo json, curl or navigate to `<host>/demo/<id>/data`.
+
+To get enriched json you can also POST json to the `/data` endpoint. In Python it would look like:
 
 ```
 import requests
@@ -39,8 +44,6 @@ with open(filepath) as f:
 response = requests.post('https://fire.vonapp.co/data', json=json.dumps(data))
 print(response.json())
 ```
-
-Alternatively, you can change the filepath for demo json in `app.py`.
 
 ## Development
 
@@ -56,3 +59,9 @@ Tests and linting run with:
 ```
 pytest -v --cov=firehouse/ tests/ && pylama -i E501 firehouse/
 ```
+
+## Roadmap
+
+- Session management
+- Mapping multiple reports
+- Contextual sidebar with report list
